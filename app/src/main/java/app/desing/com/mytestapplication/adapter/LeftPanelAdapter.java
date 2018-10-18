@@ -9,11 +9,11 @@ import android.widget.TextView;
 import java.util.List;
 
 import app.desing.com.mytestapplication.R;
-import app.desing.com.mytestapplication.modal.ListItemModal;
+import app.desing.com.mytestapplication.modal.MainCatagoryItem;
 
 public class LeftPanelAdapter extends RecyclerView.Adapter<LeftPanelAdapter.MyViewHolder> {
 
-    private List<ListItemModal> moviesList;
+    private List<MainCatagoryItem> moviesList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title; /*year, genre*/;
@@ -27,7 +27,7 @@ public class LeftPanelAdapter extends RecyclerView.Adapter<LeftPanelAdapter.MyVi
     }
 
 
-    public LeftPanelAdapter(List<ListItemModal> moviesList) {
+    public LeftPanelAdapter(List<MainCatagoryItem> moviesList) {
         this.moviesList = moviesList;
     }
 
@@ -41,7 +41,7 @@ public class LeftPanelAdapter extends RecyclerView.Adapter<LeftPanelAdapter.MyVi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        ListItemModal movie = moviesList.get(position);
+        MainCatagoryItem movie = moviesList.get(position);
         holder.title.setText(movie.getTitle());
         /*holder.genre.setText(movie.getDetail());
         holder.year.setText(movie.getImgUrl());*/

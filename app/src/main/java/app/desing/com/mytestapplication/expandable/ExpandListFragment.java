@@ -20,7 +20,7 @@ import app.desing.com.mytestapplication.R;
 import static app.desing.com.mytestapplication.expandable.GenreDataFactory.makeClassicGenre;
 import static app.desing.com.mytestapplication.expandable.GenreDataFactory.makeGenres;
 
-public class ExpandActivity extends Fragment {
+public class ExpandListFragment extends Fragment {
 
     public GenreAdapter adapter;
 
@@ -36,9 +36,6 @@ public class ExpandActivity extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
-        // RecyclerView has some built in animations to it, using the DefaultItemAnimator.
-        // Specifically when you call notifyItemChanged() it does a fade animation for the changing
-        // of the data in the ViewHolder. If you would like to disable this you can use the following:
         RecyclerView.ItemAnimator animator = recyclerView.getItemAnimator();
         if (animator instanceof DefaultItemAnimator) {
             ((DefaultItemAnimator) animator).setSupportsChangeAnimations(false);
@@ -48,31 +45,14 @@ public class ExpandActivity extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
-        Button clear = (Button) view.findViewById(R.id.toggle_button);
+        /*Button clear = (Button) view.findViewById(R.id.toggle_button);
         clear.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 adapter.toggleGroup(makeClassicGenre());
             }
-        });
+        });*/
         return view;
     }
 
-    /*@Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        adapter.onSaveInstanceState(outState);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        adapter.onRestoreInstanceState(savedInstanceState);
-    }*/
 }

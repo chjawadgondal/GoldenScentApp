@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MyTestApplication</string>
+    <string name="make_up">Make Up</string>
+    <string name="skin_care">Skin Care</string>
+    <string name="hair">Hair</string>
+    <string name="beauty_tool">Beauty Tool</string>
+    <string name="home_frag">Home Fragrances</string>
+    <string name="men">Men</string>
+    <string name="gifts">Gifts</string>
 </resources>
