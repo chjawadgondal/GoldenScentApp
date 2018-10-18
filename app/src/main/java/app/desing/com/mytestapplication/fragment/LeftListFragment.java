@@ -36,7 +36,7 @@ public class LeftListFragment extends Fragment {
     }
 
     private void setupRecyclerView(){
-        mAdapter = new LeftPanelAdapter(listItemModals);
+        mAdapter = new LeftPanelAdapter(getActivity(), listItemModals);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());

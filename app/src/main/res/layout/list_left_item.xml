@@ -43,11 +43,19 @@
                 android:id="@+id/title"
                 android:layout_width="80dp"
                 android:layout_height="20dp"
-                android:layout_margin="10dp"
-                android:gravity="center"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:gravity="center"
                 tools:text="Genre" />
+
+
+            <ImageView
+                android:id="@+id/card_selector_img"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@android:color/white"/>
 
         </RelativeLayout>
 

@@ -5,16 +5,16 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/cat_img"
+        android:id="@+id/banner_top"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/top_banner"
         android:text="Toggle Classic Group" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/cat_img" />
+        android:layout_below="@id/banner_top" />
 
 </RelativeLayout>

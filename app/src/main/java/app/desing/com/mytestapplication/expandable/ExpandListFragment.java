@@ -45,13 +45,6 @@ public class ExpandListFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
-        /*Button clear = (Button) view.findViewById(R.id.toggle_button);
-        clear.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                adapter.toggleGroup(makeClassicGenre());
-            }
-        });*/
         return view;
     }
 
