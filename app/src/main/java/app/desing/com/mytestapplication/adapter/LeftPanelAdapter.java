@@ -16,13 +16,13 @@ public class LeftPanelAdapter extends RecyclerView.Adapter<LeftPanelAdapter.MyVi
     private List<ListItemModal> moviesList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, year, genre;
+        public TextView title; /*year, genre*/;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
-            genre = (TextView) view.findViewById(R.id.genre);
-            year = (TextView) view.findViewById(R.id.year);
+            /*genre = (TextView) view.findViewById(R.id.genre);
+            year = (TextView) view.findViewById(R.id.year);*/
         }
     }
 
@@ -43,8 +43,8 @@ public class LeftPanelAdapter extends RecyclerView.Adapter<LeftPanelAdapter.MyVi
     public void onBindViewHolder(MyViewHolder holder, int position) {
         ListItemModal movie = moviesList.get(position);
         holder.title.setText(movie.getTitle());
-        holder.genre.setText(movie.getDetail());
-        holder.year.setText(movie.getImgUrl());
+        /*holder.genre.setText(movie.getDetail());
+        holder.year.setText(movie.getImgUrl());*/
     }
 
     @Override
