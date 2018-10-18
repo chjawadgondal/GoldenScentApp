@@ -1,53 +1,49 @@
-package app.desing.com.mytestapplication.view;
+package app.desing.com.mytestapplication.fragment;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import app.desing.com.mytestapplication.R;
 import app.desing.com.mytestapplication.adapter.LeftPanelAdapter;
-import app.desing.com.mytestapplication.adapter.RightPanelAdapter;
 import app.desing.com.mytestapplication.modal.ListItemModal;
 
-public class MainActivity extends AppCompatActivity {
+public class LeftListFragment extends Fragment {
 
 
-    private RecyclerView mLeftRecyclerView;
-    private RecyclerView mRightRecyclerView;
-    private LeftPanelAdapter mLeftAdapter;
-    private RightPanelAdapter mRightAdapter;
-
+    private RecyclerView mRecyclerView;
+    private LeftPanelAdapter mAdapter;
     private List<ListItemModal> listItemModals = new ArrayList<>();
 
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.left_list_frag,
+                container, false);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.leftRecyclerView);
+        setupRecyclerView();
+        return view;
+    }
 
-        mLeftRecyclerView = (RecyclerView) findViewById(R.id.leftRecyclerView);
-        mRightRecyclerView = (RecyclerView) findViewById(R.id.detailRecyclerView);
-
-        mLeftAdapter = new LeftPanelAdapter(listItemModals);
-        mRightAdapter = new RightPanelAdapter(this, listItemModals);
-
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        mLeftRecyclerView.setLayoutManager(mLayoutManager);
-        mLeftRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mLeftRecyclerView.setAdapter(mLeftAdapter);
-
-        RecyclerView.LayoutManager mRightLayoutManager = new LinearLayoutManager(getApplicationContext());
-        mRightRecyclerView.setLayoutManager(mRightLayoutManager);
-        mRightRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRightRecyclerView.setAdapter(mRightAdapter);
-
+    private void setupRecyclerView(){
+        mAdapter = new LeftPanelAdapter(listItemModals);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setAdapter(mAdapter);
         prepareMovieData();
     }
+
 
     private void prepareMovieData() {
         ListItemModal movie = new ListItemModal("Mad Max: Fury Road", "Action & Adventure", "2015");
@@ -98,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
         movie = new ListItemModal("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
         listItemModals.add(movie);
 
-        mLeftAdapter.notifyDataSetChanged();
+        mAdapter.notifyDataSetChanged();
     }
+
+
 }

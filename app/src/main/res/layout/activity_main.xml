@@ -6,18 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:weightSum="4"
-    tools:context=".view.MainActivity">
+    tools:context=".activities.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/leftRecyclerView"
+    <fragment android:name="app.desing.com.mytestapplication.fragment.LeftListFragment"
+        android:id="@+id/leftFragment"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/detailRecyclerView"
+    <fragment android:name="app.desing.com.mytestapplication.expandable.ExpandActivity"
+        android:id="@+id/rightFragment"
         android:layout_width="0dp"
         android:layout_weight="3"
         android:layout_height="match_parent"/>
+
 
 </LinearLayout>
